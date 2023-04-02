@@ -7,7 +7,7 @@ export class LoginForm extends React.Component {
             <>
                 <FormTitle>LogIt Login</FormTitle>
                 <div id="loginBox" className='bg-pureWhite p-3 lg:p-5 rounded-3xl'>
-                    <form>
+                    <form className='flex flex-col items-center justify-items-center'>
                         <FormInput tabIndex={0} type="text" placeholder="Username" id="usernameInput" name="usernameInput"/>
                         <FormInput tabIndex={1} type="password" placeholder="Password" id="passwordInput" name="passwordInput" marginTop={2}/>
                         <FormLoginButtonBox changeView={this.props.changeView} className="mt-3 content-center text-center"/>
@@ -39,7 +39,7 @@ export class RegisterForm extends React.Component {
         return (
             <>
                 <FormTitle>LogIt Registration</FormTitle>
-                <div id="registerBox" className='bg-pureWhite p-3 lg:p-5 rounded-3xl'>
+                <div id="registerBox" className='bg-pureWhite p-5 lg:p-5 rounded-3xl'>
                     <form>
                         <FormSection sectionName="About you">
                             <FormInput type="text" placeholder="First Name" marginTop='2' name="firstNameInput"/>
@@ -84,7 +84,9 @@ class FormSection extends React.Component {
                 <div className={`flex items-end ${this.props.className}`} >
                 <span className='text-xs inline'>{this.props.sectionName}</span> <hr className='ml-2 mb-1 grow border-newlightGrey-300' />
                 </div>
-                {this.props.children}
+                <div className="flex flex-col lg:block items-center justify-content-center align-middle">
+                    {this.props.children}
+                </div>
             </section>
         )
     }
