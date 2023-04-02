@@ -8,9 +8,9 @@ export class LoginForm extends React.Component {
                 <FormTitle>LogIt Login</FormTitle>
                 <div id="loginBox" className='bg-pureWhite p-3 lg:p-5 rounded-3xl'>
                     <form>
-                        <FormInput tabindex={0} type="text" placeholder="Username" id="usernameInput" name="usernameInput"/>
-                        <FormInput tabindex={1} type="password" placeholder="Password" id="passwordInput" name="passwordInput" marginTop={2}/>
-                        <FormLoginButtonBox className="mt-3 content-center text-center"/>
+                        <FormInput tabIndex={0} type="text" placeholder="Username" id="usernameInput" name="usernameInput"/>
+                        <FormInput tabIndex={1} type="password" placeholder="Password" id="passwordInput" name="passwordInput" marginTop={2}/>
+                        <FormLoginButtonBox changeView={this.props.changeView} className="mt-3 content-center text-center"/>
                     </form>
                 </div>
             </>
@@ -57,7 +57,7 @@ export class RegisterForm extends React.Component {
                             <FormInput type="password" placeholder="Password Confirmation" marginTop='2' name="passwordConfirmationInput"/>
                         </FormSection>
                         <UserAgreements onClick={this.handleUserAgreements} checked={this.state.UserAgreementsChecked}/>
-                        <FormRegisterButtonBox className="mt-3 content-center text-center"/>
+                        <FormRegisterButtonBox changeView={this.props.changeView} className="mt-3 content-center text-center"/>
                     </form>
                 </div>
             </>
@@ -101,9 +101,10 @@ class FormInput extends React.Component {
 
 class FormLoginButtonBox extends React.Component {
     render() {
+        const {changeView, ...otherProps} = this.props
         return (
-            <div {...this.props}>
-                 <FormButton>Log In</FormButton> <span className='text-sm'>or <a>Create an Account</a></span>
+            <div {...otherProps}>
+                 <FormButton>Log In</FormButton> <span className='text-sm'>or <span role="button" className="cursor-pointer font-black text-lightBlue hover:text-darkBlue" onClick={() => changeView('RegisterView')}>Create an account</span></span>
             </div>
         )
     }
@@ -111,9 +112,10 @@ class FormLoginButtonBox extends React.Component {
 
 class FormRegisterButtonBox extends React.Component {
     render() {
+        const { changeView, ...otherProps } = this.props;
         return (
-            <div {...this.props}>
-                 <FormButton>Register</FormButton> <span className='text-sm'>or <a>Log In</a></span>
+            <div {...otherProps}>
+                 <FormButton>Register</FormButton> <span className='text-sm'>or <span role="button" className="cursor-pointer font-black text-lightBlue hover:text-darkBlue" onClick={() => changeView('LoginView')}>Log In</span></span>
             </div>
         )
     }
@@ -134,9 +136,9 @@ class UserAgreements extends React.Component {
     }
 
     handleClick() {
-        console.log(this.checkBoxReference)
         this.props.onClick();
     }
+
     render() {
         const checkClass = this.props.checked ? "bg-lightBlue" : "bg-newlightGrey-300";
         return (

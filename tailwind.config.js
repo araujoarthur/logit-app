@@ -24,6 +24,7 @@ export default {
         },
         darkGrey:'#8E8E93',
         lightBlue:'#007AFF',
+        darkBlue:'#005A8C',
       },
       fontFamily:{
         inter:['Inter', 'sans-serif'],
