@@ -25,6 +25,14 @@ export default {
         darkGrey:'#8E8E93',
         lightBlue:'#007AFF',
         darkBlue:'#005A8C',
+        alertRedText:'#4a0b0b',
+        alertRedBG:'#c21d1d',
+        alertYellowText:'#623E00',
+        alertYellowBG:'#FFA000',
+        alertBlueText:'#092B4A',
+        alertBlueBG:'#1E88E5',
+        alertGreenText:'#1C481E',
+        alertGreenBG:'#388E3C'
       },
       fontFamily:{
         inter:['Inter', 'sans-serif'],

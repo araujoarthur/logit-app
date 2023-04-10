@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import AuthView from './AuthView'
+import AnimatedTest, { AnimatedTestClass } from './AnimatedComponent';
 
 export default class App extends React.Component {
 
@@ -18,6 +19,7 @@ export default class App extends React.Component {
     return (
       <>
       <AuthView />
+     {/* <AnimatedTestClass /> */}
       </>
     )
   }

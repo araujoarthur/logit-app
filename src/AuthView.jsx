@@ -2,6 +2,7 @@ import './App.css'
 import React from 'react'
 import {LoginForm, RegisterForm} from './Forms'
 import  ColumnGrid, { Column } from './ColumnGrid';
+import ContentArea, {ArticleHolder, ArticleParagraph} from './ContentArea';
 
 export default class AuthView extends React.Component {
     constructor(props){
@@ -20,7 +21,7 @@ export default class AuthView extends React.Component {
         }
 
         this.state = {
-            currentView: this.views['RegisterView'],
+            currentView: this.views['LoginView'],
         }
     }
 
@@ -51,7 +52,18 @@ class LoginView extends React.Component {
                     <LoginForm changeView={this.props.changeView}/>
                 </Column>
                 <Column colSpan='6' backGroundColor="lightGrey" extraClasses="p-5 flexbox">
-                    wellish
+                    <ContentArea title="Release Notes">
+                        {/* Dynamic Area */}
+                        <ArticleHolder title="Article Test" publicationDate="22/03/2023">
+                            <ArticleParagraph>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis luctus lectus, a maximus justo dapibus sed. Mauris fringilla ante eu nunc hendrerit, quis auctor dolor pretium. Nulla at felis mollis, vehicula ante vel, semper ligula. Aenean ac egestas purus. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat sodales sapien vel sagittis. Donec sagittis, elit a egestas facilisis, elit leo feugiat massa, non sodales libero massa vitae nulla. In hac habitasse platea dictumst. Suspendisse potenti. Donec accumsan enim id mauris pellentesque, at dictum lorem viverra. Aliquam sodales ullamcorper tempus. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vestibulum quam sit amet dui lobortis, et cursus lorem tempor. 
+                            </ArticleParagraph>
+                            <ArticleParagraph>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis luctus lectus, a maximus justo dapibus sed. Mauris fringilla ante eu nunc hendrerit, quis auctor dolor pretium. Nulla at felis mollis, vehicula ante vel, semper ligula. Aenean ac egestas purus. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat sodales sapien vel sagittis. Donec sagittis, elit a egestas facilisis, elit leo feugiat massa, non sodales libero massa vitae nulla. In hac habitasse platea dictumst. Suspendisse potenti. Donec accumsan enim id mauris pellentesque, at dictum lorem viverra. Aliquam sodales ullamcorper tempus. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vestibulum quam sit amet dui lobortis, et cursus lorem tempor. 
+                            </ArticleParagraph>
+                        </ArticleHolder>
+                        {/* End Dynamic Area */}
+                    </ContentArea>
                 </Column>
             </ColumnGrid>
         )
